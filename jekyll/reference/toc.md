@@ -46,7 +46,16 @@ nav_order: 1
 7. [조직 구성 및 역할 분담 — 팀 소개]({{ "/docs/team.html" | relative_url }}#beyondfacade--비욘드파사드-3명)
 8. [역량 검증 — 과거 프로젝트 수행 실적]({{ "/docs/team.html" | relative_url }}#역량-검증--과거-프로젝트-수행-실적)
 
-## 6. 부록
+## 6. [ERD — 데이터 모델]({{ "/docs/erd.html" | relative_url }})
+
+1. [전체 ERD]({{ "/docs/erd.html" | relative_url }}#1-전체-erd)
+2. [법령 지식층]({{ "/docs/erd.html" | relative_url }}#2-법령-지식층--db-원문-렌더링의-근거-ontology-bc)
+3. [온톨로지 매핑 허브]({{ "/docs/erd.html" | relative_url }}#3-온톨로지-매핑-허브-ontology-bc)
+4. [게임 — 메인게임 + 미니게임]({{ "/docs/erd.html" | relative_url }}#4-게임--메인게임--미니게임-2종-quest--npc-bc)
+5. [플레이어 · 세션 · 로그]({{ "/docs/erd.html" | relative_url }}#5-플레이어--세션--로그-quest--insight-bc)
+6. [가드 + 상담 준비 리포트]({{ "/docs/erd.html" | relative_url }}#6-가드--상담-준비-리포트-guard--report-bc)
+
+## 7. 부록
 
 1. [용어 정의]({{ "/docs/glossary.html" | relative_url }})
 2. [개발 일지]({{ "/docs/devlog.html" | relative_url }}) — 6/27 팀 구성부터 현재까지 일자별 기록
