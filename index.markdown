@@ -1,5 +1,5 @@
 ---
-layout: minimal
+layout: default
 title: 표지
 nav_exclude: true
 ---
