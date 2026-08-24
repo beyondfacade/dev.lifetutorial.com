@@ -1,0 +1,42 @@
+# Site settings
+title: 라이프 튜토리얼 (Life Tutorial)
+email: kcs8815@gmail.com
+description: >-
+  법령 원문 RAG와 LLM 대화 시뮬레이션 기술을 활용한
+  고3~사회초년생 실전 생활 법률 '행동 훈련' 및 근로계약서 AI 진단 서비스.
+  2026년 제8회 K-디지털 트레이닝 해커톤 준비 문서 사이트.
+baseurl: ""
+url: "https://dev.life-tutorial.com"
+lang: ko
+timezone: Asia/Seoul
+
+# Build settings
+theme: just-the-docs
+plugins:
+  - jekyll-feed
+
+# Just the Docs
+search_enabled: true
+search:
+  heading_level: 3
+  preview_words: 30
+enable_copy_code_button: true
+heading_anchors: true
+color_scheme: light
+
+aux_links:
+  GitHub:
+    - "https://github.com/beyondfacade/dev.lifetutorial.com"
+
+footer_content: "팀 BeyondFacade — 2026 제8회 K-디지털 트레이닝 해커톤. 본 사이트는 발표 심사 참고용 자료입니다."
+
+# 개발 일지(jekyll.md)는 크론이 원본을 덮어쓰므로 nav 설정을 defaults로 주입
+defaults:
+  - scope:
+      path: "jekyll.md"
+    values:
+      nav_order: 10
+
+exclude:
+  - README.md
+  - jekyll/plan/rfp-harness.md
