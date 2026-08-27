@@ -1,0 +1,151 @@
+# 지표 대시보드 데이터 — 단일 소스 (예시: metrics_status.md 실측값 기반)
+# 구조: 심사 지표(metric) × 제품 카테고리(category) 셀 단위로 목표·이력을 기록.
+# com.lifetutorial 쪽에서 이 파일을 관리하고 cron으로 복사하면 페이지가 자동 갱신된다.
+
+categories:
+  - { id: game,   name: 메인게임,   desc: "악덕 사장 NPC를 말로 설득하는 방어전 게임" }
+  - { id: guard,  name: 실전 가드,  desc: "근로계약서를 찍으면 위험 조항을 찾아주는 기능" }
+  - { id: report, name: 상담 리포트, desc: "인터뷰 내용을 정리해 상담 준비 자료로 만드는 기능" }
+  - { id: system, name: 전체 구성,  desc: "서비스를 떠받치는 컴퓨터 자원과 개발 규모" }
+
+metrics:
+  - { id: accuracy,      name: 정확도,          eli5: "문제를 냈을 때 정답을 얼마나 맞히나" }
+  - { id: hallucination, name: Hallucination,   eli5: "없는 사실을 그럴듯하게 지어내지 않나" }
+  - { id: latency,       name: Latency,         eli5: "답이 나올 때까지 몇 초 걸리나" }
+  - { id: recall_k,      name: "Recall@K",      eli5: "질문에 맞는 법 조문을 상위 몇 개 안에 찾아오나" }
+  - { id: task_completion, name: Task completion, eli5: "가상 사용자가 처음부터 끝까지 막힘 없이 완주하나" }
+  - { id: cost,          name: Cost,            eli5: "한 번 쓸 때 비용이 얼마나 드나" }
+  - { id: retry,         name: Retry 횟수,      eli5: "한 단계를 넘는 데 평균 몇 번 다시 시도하나" }
+  - { id: resource,      name: 자원·규모,       eli5: "우리 컴퓨터 메모리에 다 들어가나, 얼마나 많이 만들었나" }
+
+# status: pass(게이트 충족) / progress(산출 진행) / todo(계측·계산 예정) / na(해당 없음 — 설계 결정)
+cells:
+  - metric: accuracy
+    category: report
+    name: 추출 값 일치
+    unit: "%"
+    goal: 90
+    gate: "≥90%"
+    status: pass
+    value: 90.2
+    note: "v5 gemma3:12b 전환으로 게이트 최초 충족 (§1)"
+    history:
+      - { label: v1, value: 71.4, note: "exaone 7.8B" }
+      - { label: v2, value: 77.4, note: "채점기 결함 4건 수정" }
+      - { label: v3, value: 82.1, note: "few-shot 보강" }
+      - { label: v4, value: 83.3, note: "정체 확인 → 모델 교체 결정" }
+      - { label: v5, value: 92.9, note: "gemma3:12b — 전 기준 충족" }
+      - { label: v6, value: 92.9, note: "규칙 2줄 추가" }
+      - { label: v7, value: 90.2, note: "평가셋 146→156 확장" }
+
+  - metric: accuracy
+    category: game
+    name: 방어전 판정 accuracy
+    unit: "%"
+    goal: 100
+    gate: "오CLEAR 0"
+    status: pass
+    value: 100
+    note: "25/25, 오CLEAR 0 (§2)"
+
+  - metric: accuracy
+    category: guard
+    name: 위반 검출 룰 리그레션
+    status: pass
+    note: "6라운드 실패→수정→회귀 고정, LLM 0줄 (§3)"
+
+  - metric: hallucination
+    category: report
+    name: TRAP 날조 감지
+    goal: 0
+    direction: down
+    gate: "날조 0"
+    status: pass
+    value: 0
+    note: "실모델 전 구간 날조 0 (§5)"
+
+  - metric: hallucination
+    category: game
+    name: 오CLEAR (치명 오판)
+    goal: 0
+    direction: down
+    gate: "오CLEAR 0"
+    status: pass
+    value: 0
+    note: "로컬 EXAONE 채택 근거 실측 (§2)"
+
+  - metric: hallucination
+    category: guard
+    status: na
+    note: "LLM 미사용 — 오탐 비용이 커서 결정론적 Rule 채택 (§3)"
+
+  - metric: latency
+    category: game
+    name: 2-Call 판정 왕복
+    unit: s
+    goal: 5
+    direction: down
+    status: pass
+    value: 3.05
+    note: "실전 왕복 실측 (§6)"
+
+  - metric: latency
+    category: report
+    name: 리포트 생성
+    unit: s
+    goal: 5
+    direction: down
+    status: pass
+    value: 3
+    note: "15s → 3s (§6)"
+    history:
+      - { label: 개선 전, value: 15 }
+      - { label: 개선 후, value: 3 }
+
+  - metric: latency
+    category: guard
+    name: OCR 처리
+    unit: s
+    goal: 20
+    direction: down
+    status: pass
+    value: 20
+    note: "10~20s, 대기 UX로 흡수 + 55s 타임아웃 (§3)"
+
+  - metric: recall_k
+    category: report
+    name: RAG Recall@K
+    status: progress
+    deadline: 2026-08-31
+    plan: "Historical Replay로 소급 산출"
+    note: "\"주휴수당\"→55조 top-1 실측 1건 (§9)"
+
+  - metric: task_completion
+    category: game
+    name: 페르소나 E2E 완주
+    unit: "%"
+    goal: 100
+    status: pass
+    value: 100
+    note: "10/10, 실세션 리플레이 2 포함 (§1)"
+
+  - metric: cost
+    category: system
+    name: 임베딩 비용
+    status: todo
+    deadline: 2026-09-01
+    plan: "gemini 임베딩 단가 × 호출량 계산"
+
+  - metric: retry
+    category: game
+    name: 방어선 재시도 횟수
+    status: progress
+    deadline: 2026-09-02
+    plan: "turn_in_level 저장값 집계"
+    note: "도메인 값 이미 저장됨 (§4, §10)"
+
+  - metric: resource
+    category: system
+    name: VRAM 배분
+    status: pass
+    note: "OOM 재현 → 배분 결정 → 8.0/8.0GB 상주 (§7)"

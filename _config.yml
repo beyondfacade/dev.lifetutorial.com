@@ -44,3 +44,4 @@ defaults:
 exclude:
   - README.md
   - jekyll/plan/rfp-harness.md
+  - metrics_status.md
