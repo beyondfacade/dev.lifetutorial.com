@@ -49,9 +49,9 @@ cells:
     note: "25/25, 오CLEAR 0 (§2)"
     battery:
       - { date: "8/4",  set: "판정 A/B 1차", result: "EXAONE 채택", note: "제재 주체 오인 케이스에서 Gemini Flash-Lite 오CLEAR(치명), EXAONE은 HINT_NEEDED 정답 — 로컬 모델 채택의 첫 실측 근거" }
-      - { date: "8/25", set: "정형 평가셋 (A2 24건 + 오입력 10건)", result: "100% (25/25) · 오CLEAR 0", note: "judge_eval_report.md" }
-      - { date: "8/27", set: "자연어 신뢰성 배터리 75발화 (직접 플레이)", result: "오CLEAR 0", note: "반말·오타·감정·항복·조건부 거부 + 엣지 10종(욕설·이모지·초장문 등), 관대 클리어 3건은 교육상 무해 판단" }
-      - { date: "8/27", set: "맥락없는 발화 20종 (날씨·게임·MBTI 등)", result: "20/20 ONGOING · 오CLEAR 0", note: "NONSENSE 태그 오발동 없음" }
+      - { date: "8/25", set: "정형 평가셋 (A2 24건 + 오입력 10건)", result: "100% (25/25) · 오CLEAR 0", note: "judge_eval_report.md", label: "정형 평가셋", count: 25 }
+      - { date: "8/27", set: "자연어 신뢰성 배터리 75발화 (직접 플레이)", result: "오CLEAR 0", note: "반말·오타·감정·항복·조건부 거부 + 엣지 10종(욕설·이모지·초장문 등), 관대 클리어 3건은 교육상 무해 판단", label: "자연어 배터리", count: 75 }
+      - { date: "8/27", set: "맥락없는 발화 20종 (날씨·게임·MBTI 등)", result: "20/20 ONGOING · 오CLEAR 0", note: "NONSENSE 태그 오발동 없음", label: "무맥락 발화", count: 20 }
 
   - metric: accuracy
     category: guard

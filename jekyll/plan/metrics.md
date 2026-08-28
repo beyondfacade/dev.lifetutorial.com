@@ -135,7 +135,54 @@ nav_order: 10
 
 ## 3. 평가 시계열 — 기능별 검증 이력
 
-### 3-1. 상담 리포트 추출 정확도: 평가 v1→v7
+### 3-1. 메인게임 방어전 판정: 검증 배터리 이력
+
+판정(CLEAR/HINT)의 치명 오류는 오CLEAR — 틀린 발화를 통과시켜 잘못된 법률 지식을 학습시키는 것이다. 정형 평가셋에서 시작해 실사용자 자연어 분포로 커버리지를 넓혀도 **오CLEAR 0이 유지**되는지가 게이트다. 점수는 변하지 않고 시험 범위만 커진다 — 그래서 점수 곡선 대신 **검증 규모**를 그린다.
+
+{% assign judge = cells | where: "metric", "accuracy" | where: "category", "game" | first %}
+{% assign counted = judge.battery | where_exp: "b", "b.count" %}
+```mermaid
+---
+config:
+  themeVariables:
+    xyChart:
+      plotColorPalette: "#2a78d6"
+---
+xychart-beta
+  title "배터리별 검증 규모 (발화 수) — 전 구간 오CLEAR 0"
+  x-axis [{% for b in counted %}"{{ b.label }} {{ b.count }}"{% unless forloop.last %}, {% endunless %}{% endfor %}]
+  y-axis "검증 발화 수" 0 --> 80
+  bar [{% for b in counted %}{{ b.count }}{% unless forloop.last %}, {% endunless %}{% endfor %}]
+```
+
+| 날짜 | 평가셋 | 결과 | 비고 |
+|---|---|---|---|
+{% for b in judge.battery %}| {{ b.date }} | {{ b.set }} | **{{ b.result }}** | {{ b.note }} |
+{% endfor %}
+
+정형 평가셋(8/25)이 못 덮는 실사용자 자연어 분포를 8/27 배터리가 직접 플레이로 검증했다 — 두 층이 합쳐져 "오CLEAR 0"이 셋업된 수치가 아님을 증명한다 (§2).
+
+### 3-2. 실전 가드 위반 검출: 룰 리그레션 6라운드
+
+위반 검출은 오탐 1건이 서비스 신뢰를 무너뜨리는 영역이라 LLM 없이 결정론적 룰 19종으로 고정했다. 6라운드 전부 아래 루프의 반복 — **LLM 없는 영역에서도 같은 개선 루프가 돈다** (§3).
+
+```mermaid
+flowchart LR
+  A["실제 문서 투입"] --> B["실패 발견<br/>미검출 · 오인식 · 오탐"]
+  B --> C["원인 분석<br/>OCR 노이즈 · 서식 특성"]
+  C --> D["룰 수정<br/>(19종)"]
+  D --> E["회귀 테스트 고정"]
+  E -->|다음 문서| A
+```
+
+{% assign rules = cells | where: "metric", "accuracy" | where: "category", "guard" | first %}
+
+| 라운드 | 실패 (실측 증상) | 수정 | 유형 |
+|---|---|---|---|
+{% for r in rules.rounds %}| {{ r.round }} | {{ r.fail }} | {{ r.fix }} | <span class="mx-badge mx-badge--todo">{{ r.type }}</span> |
+{% endfor %}
+
+### 3-3. 상담 리포트 추출 정확도: 평가 v1→v7
 
 계약서·인터뷰에서 핵심 필드(시급, 근무시간 등)를 얼마나 정확히 추출하는지 7회 평가한 기록이다. 게이트는 90%. 정체 구간(v2~v4)을 곡선으로 확인하고서야 모델을 교체했고(v5), 교체 직후 게이트를 통과했다. **"느낌으로 바꾼 게 아니라 정체 곡선을 보고 바꿨다."**
 
@@ -157,30 +204,6 @@ xychart-beta
 | 회차 | 점수 | 무슨 일이 있었나 |
 |---|---|---|
 {% for h in curve.history %}| {{ h.label }} | {{ h.value }}% | {{ h.note }} |
-{% endfor %}
-
-### 3-2. 메인게임 방어전 판정: 검증 배터리 이력
-
-판정(CLEAR/HINT)의 치명 오류는 오CLEAR — 틀린 발화를 통과시켜 잘못된 법률 지식을 학습시키는 것이다. 정형 평가셋에서 시작해 실사용자 자연어 분포로 커버리지를 넓혀도 **오CLEAR 0이 유지**되는지가 게이트다. 수치가 전부 통과라 곡선 대신 배터리별 이력으로 기록한다.
-
-{% assign judge = cells | where: "metric", "accuracy" | where: "category", "game" | first %}
-
-| 날짜 | 평가셋 | 결과 | 비고 |
-|---|---|---|---|
-{% for b in judge.battery %}| {{ b.date }} | {{ b.set }} | **{{ b.result }}** | {{ b.note }} |
-{% endfor %}
-
-정형 평가셋(8/25)이 못 덮는 실사용자 자연어 분포를 8/27 배터리가 직접 플레이로 검증했다 — 두 층이 합쳐져 "오CLEAR 0"이 셋업된 수치가 아님을 증명한다 (§2).
-
-### 3-3. 실전 가드 위반 검출: 룰 리그레션 6라운드
-
-위반 검출은 오탐 1건이 서비스 신뢰를 무너뜨리는 영역이라 LLM 없이 결정론적 룰 19종으로 고정했다. 6라운드 전부 "실제 문서에서 실패 발견 → 원인 분석 → 룰 수정 → 회귀 테스트 고정"의 반복 — **LLM 없는 영역에서도 같은 개선 루프가 돈다** (§3).
-
-{% assign rules = cells | where: "metric", "accuracy" | where: "category", "guard" | first %}
-
-| 라운드 | 실패 (실측 증상) | 수정 | 유형 |
-|---|---|---|---|
-{% for r in rules.rounds %}| {{ r.round }} | {{ r.fail }} | {{ r.fix }} | {{ r.type }} |
 {% endfor %}
 
 ---
