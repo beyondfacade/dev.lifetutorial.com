@@ -8,6 +8,7 @@ nav_order: 10
 # 평가 지표 대시보드
 
 > **Status:** v0.1 (2026-08-28). 데이터 소스는 `_data/metrics.yml` (실측값 기반).
+> 잔여 WIP·TODO 지표는 9/3 해커톤 전날인 **9/2까지 전부 산출 완료 예정** (매트릭스 셀의 `(~날짜)`가 마감일).
 > 스타일: [Astryx](https://astryx.atmeta.com/) Neutral 테마 토큰 적용.
 
 <div class="mx-eli5">
@@ -64,8 +65,8 @@ nav_order: 10
         <td>
           {% if cell == nil %}<span style="color: var(--mx-text-disabled);">·</span>
           {% elsif cell.status == "pass" %}<span class="mx-badge mx-badge--pass">✓ PASS</span><div class="mx-note">{{ cell.note | default: cell.name }}</div>
-          {% elsif cell.status == "progress" %}<span class="mx-badge mx-badge--progress">WIP</span><div class="mx-note">{{ cell.plan }}</div>
-          {% elsif cell.status == "todo" %}<span class="mx-badge mx-badge--todo">TODO</span><div class="mx-note">{{ cell.plan }}</div>
+          {% elsif cell.status == "progress" %}<span class="mx-badge mx-badge--progress">WIP</span><div class="mx-note">{{ cell.plan }}{% if cell.deadline %} (~{{ cell.deadline | date: "%-m/%-d" }}){% endif %}</div>
+          {% elsif cell.status == "todo" %}<span class="mx-badge mx-badge--todo">TODO</span><div class="mx-note">{{ cell.plan }}{% if cell.deadline %} (~{{ cell.deadline | date: "%-m/%-d" }}){% endif %}</div>
           {% elsif cell.status == "na" %}<span class="mx-badge mx-badge--na">N/A</span><div class="mx-note">{{ cell.note }}</div>
           {% endif %}
         </td>
@@ -156,31 +157,6 @@ xychart-beta
 {% for h in curve.history %}| {{ h.label }} | {{ h.value }}% | {{ h.note }} |
 {% endfor %}
 
-## 4. 잔여 지표 산출 로드맵
-
-<span class="mx-badge mx-badge--progress">WIP</span>·<span class="mx-badge mx-badge--todo">TODO</span> 셀의 산출 계획이다. 원천 데이터는 이미 쌓여 있어 집계·계산만 남았다. 9/3 해커톤 시작 전날인 **9/2이 마지막 점검일**이라, 모든 태스크가 그 안에 끝난다.
-
-```mermaid
----
-config:
-  themeVariables:
-    taskBkgColor: "#525252"
-    taskBorderColor: "#262626"
-    activeTaskBkgColor: "#262626"
-    activeTaskBorderColor: "#171717"
-    taskTextColor: "#ffffff"
-    taskTextDarkColor: "#ffffff"
-    todayLineColor: "#a50c25"
----
-gantt
-  title 소급 산출·계측 로드맵
-  dateFormat YYYY-MM-DD
-  axisFormat %m/%d
-  {% for cell in cells %}{% if cell.deadline %}
-  {{ cell.plan }} : {% if cell.status == "todo" %}active, {% endif %}2026-08-28, {{ cell.deadline }}
-  {% endif %}{% endfor %}
-```
-
 ---
 
-**작동 방식**: 평가를 돌릴 때 `_data/metrics.yml`의 해당 셀 `history`에 한 줄을 추가하면, 이 페이지의 타일·매트릭스·차트·간트가 전부 자동으로 갱신된다.
+**작동 방식**: 평가를 돌릴 때 `_data/metrics.yml`의 해당 셀 `history`에 한 줄을 추가하면, 이 페이지의 타일·매트릭스·차트가 전부 자동으로 갱신된다.
