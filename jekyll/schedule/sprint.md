@@ -11,7 +11,7 @@ nav_order: 1
 
 - **스프린트**: 1주 단위. 매주 일요일 회고에서만 범위 이동을 결정하며 P0(필수 범위)에 추가하는 것은 금지 — 범위는 줄이기만 가능.
 - **데일리 공유**: 부트캠프 병행 특성상 비동기로 운영 — 커밋 로그와 [개발 일지]({{ "/docs/devlog.html" | relative_url }}) 일자별 자동 기록으로 대체.
-- **역할**: 김충식(PM·기획·서류·발표) / 이은상(백엔드·QA) / 신채연(프론트·디자인).
+- **역할**: 김충식(PM·기획·서류·발표) / 이은상(풀스택·QA) / 신채연(풀스택·디자인). 인원이 적고 일정이 짧아 프론트·백엔드 담당을 나누지 않고 교차로 작업했다. 아래 담당 표기는 해당 작업을 주도한 사람 기준.
 
 ## 스프린트 목록
 
@@ -69,5 +69,5 @@ nav_order: 1
 </div>
 </div>
 
-담당 표기: <span class="tag tag-kim">김충식</span> PM·기획 / <span class="tag tag-lee">이은상</span> 백엔드·QA / <span class="tag tag-shin">신채연</span> 프론트·디자인. 우선순위: <span class="tag tag-p0">P0</span> 데모 필수 / <span class="tag tag-p1">P1</span> 여력분 / <span class="tag tag-p2">P2</span> 이월.
+담당 표기: <span class="tag tag-kim">김충식</span> PM·기획 / <span class="tag tag-lee">이은상</span> 풀스택·QA / <span class="tag tag-shin">신채연</span> 풀스택·디자인 — 작업을 주도한 사람 기준이며 프론트·백엔드 구분 없이 교차 작업. 우선순위: <span class="tag tag-p0">P0</span> 데모 필수 / <span class="tag tag-p1">P1</span> 여력분 / <span class="tag tag-p2">P2</span> 이월.
 
