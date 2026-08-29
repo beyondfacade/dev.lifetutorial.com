@@ -37,8 +37,10 @@ Next.js 16 (App Router)  --Proxy-->   FastAPI (Hexagonal + DDD)
 ### 3인 개발 R&R 및 모듈 디렉토리
 
 - **김충식 (PM/설계·콘텐츠)**: 퀘스트 상세설계서(A1)·판정 프롬프트 스펙(A2), ERD·Decision Log, 시나리오 콘텐츠, 통합 QA, 서류·발표
-- **이은상 (BE/RAG·QA)**: `backend/` — ontology·quest·npc·auth BC, 법령 ingestion 파이프라인, 판정 API, 테스트
-- **신채연 (FE/디자인)**: `frontend/` — 대화 방어전·허브맵·결과 화면, 스프라이트 에셋 파이프라인, 연출 폴리싱
+- **이은상 (풀스택 · RAG·QA 주도)**: `backend/` — ontology·quest·npc·auth BC, 법령 ingestion 파이프라인, 판정 API, 테스트
+- **신채연 (풀스택 · 화면·디자인 주도)**: `frontend/` — 대화 방어전·허브맵·결과 화면, 스프라이트 에셋 파이프라인, 연출 폴리싱
+
+> 프론트·백엔드 담당을 나누지 않고 교차로 작업했다. 위 디렉토리 표기는 해당 영역을 주도한 사람 기준.
 
 ---
 
