@@ -70,7 +70,7 @@ Next.js 16 (App Router)  --Proxy-->   FastAPI (Hexagonal + DDD)
 
 ## 💻 4. 클로드 코드 태스크 프롬프트 (Execution Directives)
 
-현재 스프린트(Sprint 5, 8/25~8/31)의 잔여 P0/P1 과업 기준.
+Sprint 5(8/25~8/31)에 투입한 실행 지시문이다. 아래 Task 1~3은 모두 완료됐다 — 게임 API 이관 8/24, 계산 미니게임 8/25, 판정 평가셋 실측 8/27~8/28.
 
 ### [Task 1] 게임 플레이 API 백엔드 이관 (MSW 제거)
 

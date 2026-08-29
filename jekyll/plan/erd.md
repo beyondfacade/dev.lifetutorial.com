@@ -145,7 +145,7 @@ v1.0 설계의 `consult_session`/`consult_issue` + `checkup_question`/`referral_
 | **변경** | `report_session`에 retention_expires_at, extension_count 추가 (v0.15.6) | 리포트 30일 보존 + 최대 2회 연장 정책 |
 | **변경** | `contract_scan`에 doc_type, template_matched, confirmed_fields, image/fields_purged_at 추가 | OCR 진단 실구현 — 확인 필드 보관 + 파기 시각 기록 |
 | **변경** | `guard_rule.violation_type_id(FK)` → `violation_type_code`(문자열) | violation_type 허브 테이블 미구현 — BC 간 코드 참조로 대체 |
-| **미구현 (P2 이월)** | `violation_type`, `violation_article_map`, `violation_quest_map`, `violation_cooccurrence`, `quest_article_map`, `choice_node`, `choice_option` | 온톨로지 허브 테이블군·선택지 시뮬은 본선 MVP 범위 밖 — 정식 출시 시 v1.0 설계 의도대로 승격 예정 |
+| **미구현 (이월)** | `violation_type`, `violation_article_map`, `violation_quest_map`, `violation_cooccurrence`, `quest_article_map`, `choice_node`, `choice_option` | 온톨로지 허브 테이블군(P2)·선택지 시뮬(P1 보류)은 본선 데모 범위 밖 — 정식 출시 시 v1.0 설계 의도대로 승격 예정 |
 
 ---
 

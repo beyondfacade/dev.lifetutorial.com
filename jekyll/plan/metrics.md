@@ -8,7 +8,7 @@ nav_order: 10
 # 평가 지표 대시보드
 
 > **Status:** v0.1 (2026-08-28). 데이터 소스는 `_data/metrics.yml` (실측값 기반).
-> 잔여 WIP·TODO 지표는 9/3 해커톤 전날인 **9/2까지 전부 산출 완료 예정** (매트릭스 셀의 `(~날짜)`가 마감일).
+> 잔여 WIP·TODO 지표는 개발 마감일인 **9/1까지 산출 완료 예정** (해커톤 9/2).
 > 스타일: [Astryx](https://astryx.atmeta.com/) Neutral 테마 토큰 적용.
 
 <div class="mx-eli5">
