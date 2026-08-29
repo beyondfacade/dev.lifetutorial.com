@@ -27,33 +27,26 @@ nav_order: 1
 | [Sprint 5 — 통합·폴리싱]({{ "/docs/sprints/s5.html" | relative_url }}) | 8/25 ~ 8/31 | 게임 API 이관, 미니게임, 통합 리허설 | 🔄 진행 중 |
 | [Sprint 6 — 제출·대회]({{ "/docs/sprints/s6.html" | relative_url }}) | 9/1 ~ 9/2 | 최종 결과물 제출, 발표·실제 플레이 시연 | ⬜ 예정 |
 
-## 칸반 보드 (8/24 기준)
+## 칸반 보드 (8/30 기준)
 
 <div class="kanban-wrap">
 <div class="kanban-board">
 
 <div class="kanban-col">
 <h4>Backlog <span class="count">— 정식 출시 범위로 이월</span></h4>
-<div class="kanban-card"><p class="card-title">실전 가드 (계약서 AI 진단)</p><div class="card-meta"><span class="tag tag-p2">P2</span></div></div>
-<div class="kanban-card"><p class="card-title">상담 준비 리포트</p><div class="card-meta"><span class="tag tag-p2">P2</span></div></div>
 <div class="kanban-card"><p class="card-title">2차 방어전 퀘스트 · 공유 카드 · 모바일 앱</p><div class="card-meta"><span class="tag tag-p2">P2</span></div></div>
 </div>
 
 <div class="kanban-col">
 <h4>To Do</h4>
-<div class="kanban-card"><p class="card-title">계산 미니게임 (주휴수당 던전)</p><div class="card-meta"><span class="tag tag-shin">신채연</span><span class="tag tag-p1">P1</span></div></div>
 <div class="kanban-card"><p class="card-title">선택지 시뮬레이션 (부당해고)</p><div class="card-meta"><span class="tag tag-kim">김충식</span><span class="tag tag-shin">신채연</span><span class="tag tag-p1">P1</span></div></div>
-<div class="kanban-card"><p class="card-title">판정 평가셋 실측 · 오입력 내성</p><div class="card-meta"><span class="tag tag-lee">이은상</span><span class="tag tag-p1">P1</span></div></div>
-<div class="kanban-card"><p class="card-title">연출 폴리싱 (표정·모션·사운드)</p><div class="card-meta"><span class="tag tag-shin">신채연</span><span class="tag tag-p1">P1</span></div></div>
-<div class="kanban-card"><p class="card-title">통합 리허설 · 심사위원 타이핑 시나리오</p><div class="card-meta"><span class="tag tag-all">전원</span><span class="tag tag-p0">P0</span></div></div>
 <div class="kanban-card"><p class="card-title">최종 결과물 패키징 (9/1)</p><div class="card-meta"><span class="tag tag-kim">김충식</span><span class="tag tag-p0">P0</span></div></div>
 </div>
 
 <div class="kanban-col">
 <h4>In Progress</h4>
-<div class="kanban-card"><p class="card-title">게임 플레이 API 백엔드 이관 (MSW 제거)</p><div class="card-meta"><span class="tag tag-lee">이은상</span><span class="tag tag-p0">P0</span></div></div>
-<div class="kanban-card"><p class="card-title">신규 캐릭터 에셋 파이프라인</p><div class="card-meta"><span class="tag tag-shin">신채연</span><span class="tag tag-p1">P1</span></div></div>
 <div class="kanban-card"><p class="card-title">발표자료 · 시연 시나리오</p><div class="card-meta"><span class="tag tag-kim">김충식</span><span class="tag tag-p0">P0</span></div></div>
+<div class="kanban-card"><p class="card-title">연출 폴리싱 — 잔여: 응답 스트리밍 · 클리어 사운드</p><div class="card-meta"><span class="tag tag-shin">신채연</span><span class="tag tag-p1">P1</span></div></div>
 </div>
 
 <div class="kanban-col kanban-done">
@@ -64,10 +57,19 @@ nav_order: 1
 <div class="kanban-card"><p class="card-title">방어전 → 허브맵 → 결과 화면 (FE v0.6.3)</p><div class="card-meta"><span class="tag tag-shin">신채연</span><span class="tag tag-p0">P0</span></div></div>
 <div class="kanban-card"><p class="card-title">인증 풀스택 (BE v0.10 / FE v0.7)</p><div class="card-meta"><span class="tag tag-lee">이은상</span><span class="tag tag-shin">신채연</span><span class="tag tag-p0">P0</span></div></div>
 <div class="kanban-card"><p class="card-title">예선 기획서 제출 → 본선 진출 확정</p><div class="card-meta"><span class="tag tag-kim">김충식</span></div></div>
+<div class="kanban-card"><p class="card-title">게임 플레이 API 백엔드 이관 (MSW 제거)</p><div class="card-meta"><span class="tag tag-lee">이은상</span><span class="tag tag-p0">P0</span></div></div>
+<div class="kanban-card"><p class="card-title">신규 캐릭터 에셋 파이프라인</p><div class="card-meta"><span class="tag tag-shin">신채연</span><span class="tag tag-p1">P1</span></div></div>
+<div class="kanban-card"><p class="card-title">계산 미니게임 (주휴수당 던전)</p><div class="card-meta"><span class="tag tag-shin">신채연</span><span class="tag tag-p1">P1</span></div></div>
+<div class="kanban-card"><p class="card-title">판정 평가셋 실측 · 오입력 내성</p><div class="card-meta"><span class="tag tag-lee">이은상</span><span class="tag tag-p1">P1</span></div></div>
+<div class="kanban-card"><p class="card-title">통합 리허설 · 심사위원 타이핑 시나리오</p><div class="card-meta"><span class="tag tag-all">전원</span><span class="tag tag-p0">P0</span></div></div>
+<div class="kanban-card"><p class="card-title">실전 가드 (계약서 AI 진단)</p><div class="card-meta"><span class="tag tag-lee">이은상</span><span class="tag tag-shin">신채연</span><span class="tag tag-p2">P2</span></div></div>
+<div class="kanban-card"><p class="card-title">상담 준비 리포트</p><div class="card-meta"><span class="tag tag-lee">이은상</span><span class="tag tag-shin">신채연</span><span class="tag tag-p2">P2</span></div></div>
 </div>
 
 </div>
 </div>
+
+> 8/24 기준 대비 이동: 실전 가드·상담 준비 리포트는 P2 이월 예정이었으나 8/26~8/28에 풀스택 구현·회귀 검증까지 마쳐 Done으로 올라갔다. 계산 미니게임·판정 평가셋 실측·통합 리허설·게임 플레이 API 이관·신규 캐릭터 에셋도 Done. 연출 폴리싱은 잔여 범위(응답 스트리밍·클리어 사운드)만 남아 In Progress, 선택지 시뮬레이션은 P1 여력분으로 To Do에 유지.
 
 담당 표기: <span class="tag tag-kim">김충식</span> PM·기획 / <span class="tag tag-lee">이은상</span> 풀스택·QA / <span class="tag tag-shin">신채연</span> 풀스택·디자인 — 작업을 주도한 사람 기준이며 프론트·백엔드 구분 없이 교차 작업. 우선순위: <span class="tag tag-p0">P0</span> 데모 필수 / <span class="tag tag-p1">P1</span> 여력분 / <span class="tag tag-p2">P2</span> 이월.
 
