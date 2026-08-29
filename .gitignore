@@ -7,3 +7,6 @@ metrics_status.md
 # Jekyll 빌드 산출물
 _site/
 .jekyll-cache/
+
+# 내부 작업 메모 — 캡처 관리 안내 (빌드 제외 파일, 리포에도 올리지 않음)
+_screens-howto.md
