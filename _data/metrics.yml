@@ -1,6 +1,9 @@
-# 지표 대시보드 데이터 — 단일 소스 (예시: metrics_status.md 실측값 기반)
+# 지표 대시보드 데이터 — /docs/metrics.html 페이지가 읽는 유일한 데이터 파일.
 # 구조: 심사 지표(metric) × 제품 카테고리(category) 셀 단위로 목표·이력을 기록.
-# com.lifetutorial 쪽에서 이 파일을 관리하고 cron으로 복사하면 페이지가 자동 갱신된다.
+#
+# 실측 원본은 개발 리포의 docs/metrics_status.md다(그 문서 §12에 "이 문서가 소스"라고 명시).
+# 이 파일은 그 수치를 대시보드용으로 옮겨 적은 파생 데이터이며, 자동 복사는 없고 이 리포에서 직접 편집한다.
+# 여기서 먼저 고쳤다면 metrics_status.md에도 반영할 것 — 그쪽 docs/는 gitignore라 파일만 고치면 된다.
 
 categories:
   - { id: game,   name: 메인게임,   desc: "악덕 사장 NPC를 말로 설득하는 방어전 게임" }
