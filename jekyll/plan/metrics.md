@@ -7,7 +7,7 @@ nav_order: 10
 
 # 평가 지표 대시보드
 
-> **Status:** v0.1 (2026-08-28). 데이터 소스는 `_data/metrics.yml` (실측값 기반).
+> **Status:** v0.2 (2026-08-30). 데이터 소스는 `_data/metrics.yml` (실측값 기반).
 > 잔여 WIP·TODO 지표는 개발 마감일인 **9/1까지 산출 완료 예정** (해커톤 9/2).
 > 스타일: [Astryx](https://astryx.atmeta.com/) Neutral 테마 토큰 적용.
 
@@ -211,6 +211,43 @@ xychart-beta
 |---|---|---|
 {% for h in curve.history %}| {{ h.label }} | {{ h.value }}% | {{ h.note }} |
 {% endfor %}
+
+### 3-4. 통합 리허설: 자동 완주 9회 · 오프라인 폴백 훈련
+
+{% assign rh = cells | where: "metric", "task_completion" | where: "category", "game" | first %}
+{% assign fb = cells | where: "metric", "latency" | where: "category", "game" | first %}
+
+앞의 세 섹션이 기능별 평가라면, {{ rh.rehearsal.date }} 통합 리허설은 그 기능들을 이어 붙인 상태로 처음부터 끝까지 돌린 기록이다. 자동 완주를 {{ rh.rehearsal.rounds }}라운드에 걸쳐 {{ rh.rehearsal.runs }}회 수행했고 {{ rh.rehearsal.result }}으로 끝냈다. 같은 날 {{ rh.rehearsal.drills }}.
+
+가장 큰 수확은 기능 결함이 아니라 **절차 결함**이었다. 오프라인으로 전환해도 리포트 모델이 GPU에 그대로 남아 판정 왕복이 22초까지 늘어졌다. 전환 절차에 "리포트 모델 언로드"를 넣자 3.8초로 돌아왔다 — 게이트 5초 안이다. 리허설을 돌리지 않았다면 시연장에서 처음 만났을 숫자다.
+
+```mermaid
+---
+config:
+  themeVariables:
+    xyChart:
+      plotColorPalette: "#2a78d6"
+---
+xychart-beta
+  title "판정 왕복 (초), 게이트 5초"
+  x-axis [{% for h in fb.history %}"{{ h.label }}"{% unless forloop.last %}, {% endunless %}{% endfor %}]
+  y-axis "왕복 (초)" 0 --> 25
+  bar [{% for h in fb.history %}{{ h.value }}{% unless forloop.last %}, {% endunless %}{% endfor %}]
+```
+
+| 구간 | 판정 왕복 | 무슨 일이 있었나 |
+|---|---|---|
+{% for h in fb.history %}| {{ h.label }} | {{ h.value }}s | {{ h.note }} |
+{% endfor %}
+
+완주를 반복하며 잡아 고친 결함은 {{ rh.rehearsal.defects | size }}건이다. 라운드를 거듭할수록 남는 것이 줄어 3차에서 0이 됐다.
+
+| 결함 | 유형 |
+|---|---|
+{% for d in rh.rehearsal.defects %}| {{ d.symptom }} | <span class="mx-badge mx-badge--todo">{{ d.type }}</span> |
+{% endfor %}
+
+기능별 평가가 각 부품의 게이트를 지킨다면, 리허설은 부품을 다 끼운 뒤에야 드러나는 것들을 잡는다. 이번에 나온 6건 중 절반은 단위 평가로는 보이지 않는 종류였다 — 시드 데이터 동기화, 계정 간 세션 격리, 화면 잘림.
 
 ---
 
