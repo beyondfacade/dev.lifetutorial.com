@@ -55,10 +55,20 @@ nav_order: 1
 5. [플레이어 · 세션 · 로그]({{ "/docs/erd.html" | relative_url }}#5-플레이어--세션--로그-quest--insight-bc)
 6. [가드 + 상담 준비 리포트]({{ "/docs/erd.html" | relative_url }}#6-가드--상담-준비-리포트-guard--report-bc)
 
-## 7. 부록
+## 7. [구현 화면 — 최종 산출물]({{ "/docs/screens.html" | relative_url }})
+
+1. [진입과 허브]({{ "/docs/screens.html" | relative_url }}#1-진입과-허브)
+2. [메인게임 — 대화 방어전]({{ "/docs/screens.html" | relative_url }}#2-메인게임--대화-방어전)
+3. [보조게임 — 주휴수당 계산 던전]({{ "/docs/screens.html" | relative_url }}#3-보조게임--주휴수당-계산-던전)
+4. [실전 가드 — 근로계약서 진단]({{ "/docs/screens.html" | relative_url }}#4-실전-가드--근로계약서-진단)
+5. [상담 준비 리포트]({{ "/docs/screens.html" | relative_url }}#5-상담-준비-리포트)
+6. [설계에서 지킨 것]({{ "/docs/screens.html" | relative_url }}#설계에서-지킨-것)
+
+## 8. 부록
 
 1. [용어 정의]({{ "/docs/glossary.html" | relative_url }})
-2. [개발 일지]({{ "/docs/devlog.html" | relative_url }}) — 6/27 팀 구성부터 현재까지 일자별 기록
+2. [평가 지표 대시보드]({{ "/docs/metrics.html" | relative_url }}) — 지표 매트릭스·게이트 대비 현황·기능별 평가 시계열
+3. [개발 일지]({{ "/docs/devlog.html" | relative_url }}) — 6/27 팀 구성부터 현재까지 일자별 기록
 
 ---
 
