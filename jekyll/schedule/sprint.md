@@ -41,6 +41,8 @@ nav_order: 1
 <h4>To Do</h4>
 <div class="kanban-card"><p class="card-title">선택지 시뮬레이션 (부당해고)</p><div class="card-meta"><span class="tag tag-kim">김충식</span><span class="tag tag-shin">신채연</span><span class="tag tag-p1">P1</span></div></div>
 <div class="kanban-card"><p class="card-title">최종 결과물 패키징 (9/1)</p><div class="card-meta"><span class="tag tag-kim">김충식</span><span class="tag tag-p0">P0</span></div></div>
+<div class="kanban-card"><p class="card-title">시연 배포 실행·검증 (B안) — 터널·CORS·쿠키·외부망 로그인 유지 · 본선 1일차</p><div class="card-meta"><span class="tag tag-lee">이은상</span><span class="tag tag-p0">P0</span></div></div>
+<div class="kanban-card"><p class="card-title">프론트 컨테이너 · 프로덕션 빌드 설정 — 본선 2일차</p><div class="card-meta"><span class="tag tag-shin">신채연</span><span class="tag tag-p0">P0</span></div></div>
 </div>
 
 <div class="kanban-col">
@@ -69,7 +71,7 @@ nav_order: 1
 </div>
 </div>
 
-> 8/24 기준 대비 이동: 실전 가드·상담 준비 리포트는 P2 이월 예정이었으나 8/26~8/28에 풀스택 구현·회귀 검증까지 마쳐 Done으로 올라갔다. 계산 미니게임·판정 평가셋 실측·통합 리허설·게임 플레이 API 이관·신규 캐릭터 에셋도 Done. 연출 폴리싱은 잔여 범위(응답 스트리밍·클리어 사운드)만 남아 In Progress, 선택지 시뮬레이션은 P1 여력분으로 To Do에 유지.
+> 8/24 기준 대비 이동: 실전 가드·상담 준비 리포트는 P2 이월 예정이었으나 8/26~8/28에 풀스택 구현·회귀 검증까지 마쳐 Done으로 올라갔다. 계산 미니게임·판정 평가셋 실측·통합 리허설·게임 플레이 API 이관·신규 캐릭터 에셋도 Done. 연출 폴리싱은 잔여 범위(응답 스트리밍·클리어 사운드)만 남아 In Progress, 선택지 시뮬레이션은 P1 여력분으로 To Do에 유지. 8/30 배포 구성을 B안(화면 Vercel + API 백엔드 직결)으로 확정하면서 실행·검증과 프론트 컨테이너·프로덕션 빌드 설정이 To Do에 새로 올라왔다.
 
 담당 표기: <span class="tag tag-kim">김충식</span> PM·기획 / <span class="tag tag-lee">이은상</span> 풀스택·QA / <span class="tag tag-shin">신채연</span> 풀스택·디자인 — 작업을 주도한 사람 기준이며 프론트·백엔드 구분 없이 교차 작업. 우선순위: <span class="tag tag-p0">P0</span> 데모 필수 / <span class="tag tag-p1">P1</span> 여력분 / <span class="tag tag-p2">P2</span> 이월.
 
