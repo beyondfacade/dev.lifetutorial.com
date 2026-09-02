@@ -40,7 +40,6 @@ nav_order: 1
 <div class="kanban-col">
 <h4>To Do</h4>
 <div class="kanban-card"><p class="card-title">선택지 시뮬레이션 (부당해고)</p><div class="card-meta"><span class="tag tag-kim">김충식</span><span class="tag tag-shin">신채연</span><span class="tag tag-p1">P1</span></div></div>
-<div class="kanban-card"><p class="card-title">최종 결과물 패키징 (9/1)</p><div class="card-meta"><span class="tag tag-kim">김충식</span><span class="tag tag-p0">P0</span></div></div>
 <div class="kanban-card"><p class="card-title">외부망(집 와이파이 밖) 실동작 확인 · 긴 요청(리포트 ~30초) 터널 통과 — 본선 1일차</p><div class="card-meta"><span class="tag tag-lee">이은상</span><span class="tag tag-p0">P0</span></div></div>
 <div class="kanban-card"><p class="card-title">실제 폰 사진으로 문서 점검 왕복 재확인 — OCR 상한 적용 후 인식 품질</p><div class="card-meta"><span class="tag tag-lee">이은상</span><span class="tag tag-p1">P1</span></div></div>
 </div>
@@ -72,12 +71,13 @@ nav_order: 1
 <div class="kanban-card"><p class="card-title">프론트 프로덕션 빌드 배포 (Vercel)</p><div class="card-meta"><span class="tag tag-shin">신채연</span><span class="tag tag-p0">P0</span></div></div>
 <div class="kanban-card"><p class="card-title">방어전 턴 지연 제거 — 임베딩 429 지수 백오프 (28초 → 0.4초)</p><div class="card-meta"><span class="tag tag-lee">이은상</span><span class="tag tag-p0">P0</span></div></div>
 <div class="kanban-card"><p class="card-title">상담 준비 리포트 PDF 인쇄 복구 (A4 전폭)</p><div class="card-meta"><span class="tag tag-shin">신채연</span><span class="tag tag-p1">P1</span></div></div>
+<div class="kanban-card"><p class="card-title">최종 결과물 패키징 — 실도메인 배포로 갈음, 심사위원 직접 플레이</p><div class="card-meta"><span class="tag tag-kim">김충식</span><span class="tag tag-p0">P0</span></div></div>
 </div>
 
 </div>
 </div>
 
-> 8/30 기준 대비 이동: 8/30에 To Do로 올렸던 **시연 배포 실행·검증(B안)** 과 **프론트 프로덕션 빌드**는 8/31에 실도메인 배포까지 마쳐 Done으로 올라갔다(노출 대응 — 판정 API 인증·API 자동 문서 차단·CORS·쿠키 Secure·OAuth 리디렉트 포함). 9/1에는 **방어전 턴 지연(임베딩 429 고정 25초 대기 → 지수 백오프, 28초 → 중앙값 0.4초)** 과 **리포트 PDF 인쇄 복구**가 Done으로 들어왔고, **OCR 입력 상한**은 코드·테스트가 통과했으나 커밋·버전 반영 전이라 In Progress에 둔다. 배포가 끝나면서 To Do에는 **외부망 실동작 확인 + 긴 요청 터널 통과**(본선 1일차)와 **실제 폰 사진 문서 점검 왕복 재확인**이 새로 올라왔다. 연출 폴리싱(응답 스트리밍·클리어 사운드)과 선택지 시뮬레이션은 그대로 잔여다.
+> 8/30 기준 대비 이동: 8/30에 To Do로 올렸던 **시연 배포 실행·검증(B안)** 과 **프론트 프로덕션 빌드**는 8/31에 실도메인 배포까지 마쳐 Done으로 올라갔다(노출 대응 — 판정 API 인증·API 자동 문서 차단·CORS·쿠키 Secure·OAuth 리디렉트 포함). 9/1에는 **방어전 턴 지연(임베딩 429 고정 25초 대기 → 지수 백오프, 28초 → 중앙값 0.4초)** 과 **리포트 PDF 인쇄 복구**가 Done으로 들어왔고, **OCR 입력 상한**은 코드·테스트가 통과했으나 커밋·버전 반영 전이라 In Progress에 둔다. 배포가 끝나면서 To Do에는 **외부망 실동작 확인 + 긴 요청 터널 통과**(본선 1일차)와 **실제 폰 사진 문서 점검 왕복 재확인**이 새로 올라왔다. **최종 결과물 패키징**은 별도 빌드 산출물을 넘기는 대신 실도메인 배포로 갈음하기로 정리해 Done으로 옮겼다 — 심사위원이 브라우저에서 바로 플레이한다. 연출 폴리싱(응답 스트리밍·클리어 사운드)과 선택지 시뮬레이션은 그대로 잔여다.
 
 담당 표기: <span class="tag tag-kim">김충식</span> PM·기획 / <span class="tag tag-lee">이은상</span> 풀스택·QA / <span class="tag tag-shin">신채연</span> 풀스택·디자인 — 작업을 주도한 사람 기준이며 프론트·백엔드 구분 없이 교차 작업. 우선순위: <span class="tag tag-p0">P0</span> 데모 필수 / <span class="tag tag-p1">P1</span> 여력분 / <span class="tag tag-p2">P2</span> 이월.
 
