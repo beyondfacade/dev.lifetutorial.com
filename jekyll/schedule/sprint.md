@@ -24,8 +24,8 @@ nav_order: 1
 | [Sprint 2 — 예선 서류]({{ "/docs/sprints/s2.html" | relative_url }}) | 8/4 ~ 8/10 | ERD v1.0, 예선 기획서 완성·제출 | ✅ 완료 |
 | [Sprint 3 — 예선 대기]({{ "/docs/sprints/s3.html" | relative_url }}) | 8/11 ~ 8/17 | 부트캠프 병행, 본선 대비 자산 정리 | ✅ 완료 |
 | [Sprint 4 — 본선 개발 재개]({{ "/docs/sprints/s4.html" | relative_url }}) | 8/18 ~ 8/24 | 본선 확정(8/21) → 프론트 스프린트 + 인증 풀스택 | ✅ 완료 |
-| [Sprint 5 — 통합·폴리싱]({{ "/docs/sprints/s5.html" | relative_url }}) | 8/25 ~ 8/31 | 게임 API 이관, 미니게임, 통합 리허설 | ✅ 기간 종료 — P0 완료, 잔여 P1 이월 |
-| [Sprint 6 — 제출·대회]({{ "/docs/sprints/s6.html" | relative_url }}) | 9/1 ~ 9/2 | 최종 결과물 제출, 발표·실제 플레이 시연 | 🔄 진행 중 |
+| [Sprint 5 — 통합·폴리싱]({{ "/docs/sprints/s5.html" | relative_url }}) | 8/25 ~ 8/31 | 게임 API 이관, 미니게임, 통합 리허설 | ✅ 완료 |
+| [Sprint 6 — 제출·대회]({{ "/docs/sprints/s6.html" | relative_url }}) | 9/1 ~ 9/2 | 최종 결과물 제출, 발표·실제 플레이 시연 | ✅ 완료 |
 
 ## 칸반 보드 (9/1 기준)
 
