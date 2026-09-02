@@ -71,8 +71,8 @@ nav_order: 1
 <div class="kanban-card"><p class="card-title">방어전 턴 지연 제거 — 임베딩 429 지수 백오프 (28초 → 0.4초)</p><div class="card-meta"><span class="tag tag-lee">이은상</span><span class="tag tag-p0">P0</span></div></div>
 <div class="kanban-card"><p class="card-title">상담 준비 리포트 PDF 인쇄 복구 (A4 전폭)</p><div class="card-meta"><span class="tag tag-shin">신채연</span><span class="tag tag-p1">P1</span></div></div>
 <div class="kanban-card"><p class="card-title">최종 결과물 패키징 — 실도메인 배포로 갈음, 심사위원 직접 플레이</p><div class="card-meta"><span class="tag tag-kim">김충식</span><span class="tag tag-p0">P0</span></div></div>
-<div class="kanban-card"><p class="card-title">발표자료 · 시연 시나리오 최종본</p><div class="card-meta"><span class="tag tag-kim">김충식</span><span class="tag tag-p0">P0</span></div></div>
-<div class="kanban-card"><p class="card-title">시연 영상 — 유튜브 롱폼 1편 + 기능별 숏폼 4편(방어전 · 주휴수당 · OCR · 상담 리포트)</p><div class="card-meta"><span class="tag tag-kim">김충식</span><span class="tag tag-p0">P0</span></div></div>
+<div class="kanban-card"><p class="card-title">발표자료 · 시연 시나리오 최종본 — 리허설 3회 완주</p><div class="card-meta"><span class="tag tag-kim">김충식</span><span class="tag tag-p0">P0</span></div></div>
+<div class="kanban-card"><p class="card-title"><a href="{{ "/docs/overview.html#demo-videos" | relative_url }}">시연 영상</a> — 유튜브 롱폼 1편 + 기능별 숏폼 4편(방어전 · 주휴수당 · OCR · 상담 리포트)</p><div class="card-meta"><span class="tag tag-kim">김충식</span><span class="tag tag-p0">P0</span></div></div>
 </div>
 
 </div>

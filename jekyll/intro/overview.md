@@ -26,6 +26,20 @@ nav_order: 2
 ### 3. 근로계약서 AI 진단
 - 근로계약서를 업로드하면 필수 기재사항 누락, 법정 기준 미달 조항, 불리한 조항을 AI가 진단하고 관련 법령 조문을 근거로 제시합니다.
 
+## 시연 영상 {#demo-videos}
+
+실제 동작하는 화면을 녹화한 영상입니다. 전체 흐름은 롱폼 한 편으로, 기능별 상세는 숏폼 네 편으로 나눠 올렸습니다.
+
+| 구분 | 내용 | 영상 |
+|---|---|---|
+| **전체 완주 (롱폼)** | 허브맵 진입부터 방어전·미니게임·문서 점검·리포트까지 한 번에 완주 | [youtu.be/XuaXGvNrjLo](https://youtu.be/XuaXGvNrjLo) |
+| 방어전 | 사장 NPC 상대 반박 → RAG 근거 조문 → 방어선 3단 클리어 | [숏폼](https://www.youtube.com/shorts/vWxQcSWd69g) |
+| 주휴수당 계산 | 계산 미니게임(주휴수당 던전) Q1~Q5 | [숏폼](https://www.youtube.com/shorts/FUh8EBYFDMY) |
+| OCR 문서 점검 | 근로계약서 이미지 업로드 → 조항 자동 진단 | [숏폼](https://www.youtube.com/shorts/wDEINITuSvQ) |
+| 상담 준비 리포트 | 인터뷰 → 상담 준비 리포트 생성 | [숏폼](https://www.youtube.com/shorts/nN1EB2QrjyQ) |
+
+실제 서비스는 [www.life-tutorial.com](https://www.life-tutorial.com)에서 직접 플레이할 수 있습니다.
+
 ## 기대효과
 
 - 법률 지식의 '암기'가 아닌 **실전 행동 역량** 습득
