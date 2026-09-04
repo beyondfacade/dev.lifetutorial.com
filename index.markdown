@@ -30,7 +30,7 @@ nav_exclude: true
     <p style="margin: 0;"><a href="https://github.com/beyondfacade/dev.lifetutorial.com">https://github.com/beyondfacade/dev.lifetutorial.com.git</a></p>
 
     <p style="color: #828282; font-size: 13px; letter-spacing: 0.05em; margin: 28px 0 6px;">데모 사이트</p>
-    <p style="margin: 0;"><a href="https://dev.life-tutorial.com">https://dev.life-tutorial.com</a></p>
+    <p style="margin: 0;"><a href="https://life-tutorial.com">https://life-tutorial.com</a></p>
 
   </div>
 
