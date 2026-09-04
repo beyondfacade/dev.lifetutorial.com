@@ -16,6 +16,8 @@ nav_exclude: true
 
   <p style="font-size: 1.35em; font-weight: 700; margin-top: 20px;">라이프 튜토리얼 (Life Tutorial)</p>
 
+  <p style="margin: 32px 0 0;"><span style="display: inline-block; border: 1.5px solid #111; border-radius: 999px; padding: 9px 22px; font-weight: 700; font-size: 0.95em; letter-spacing: 0.02em;">🏆 우수상 · 고용노동부장관상 수상</span></p>
+
   <hr style="width: 88px; margin: 52px auto; border: none; border-top: 2px solid #111;">
 
   <div style="display: inline-block; text-align: left;">
